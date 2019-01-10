@@ -279,13 +279,13 @@ endif
 	
 ifeq ($(app), 0)
 	@python ../tools/gen_appbin.py $< 0 $(mode) $(freqdiv) $(size_map) $(app)
-	@mv eagle.app.flash.bin ../bin/eagle.flash.bin
-	@mv eagle.app.v6.irom0text.bin ../bin/eagle.irom0text.bin
+	@mv eagle.app.flash.bin ../bin/$(shell basename $(shell pwd)).eagle.flash.bin
+	@mv eagle.app.v6.irom0text.bin ../bin/$(shell basename $(shell pwd)).eagle.irom0text.bin
 	@rm eagle.app.v6.*
 	@echo "No boot needed."
 	@echo "Generate eagle.flash.bin and eagle.irom0text.bin successully in folder bin."
-	@echo "eagle.flash.bin-------->0x00000"
-	@echo "eagle.irom0text.bin---->0x10000"
+	@echo "$(shell basename $(shell pwd)).eagle.flash.bin-------->0x00000"
+	@echo "$(shell basename $(shell pwd)).eagle.irom0text.bin---->0x10000"
 else
     ifneq ($(boot), new)
 		@python ../tools/gen_appbin.py $< 1 $(mode) $(freqdiv) $(size_map) $(app)
