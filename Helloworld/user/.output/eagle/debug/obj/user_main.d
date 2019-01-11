@@ -17,8 +17,6 @@
  /opt/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/cdefs.h \
  /opt/xtensa-lx106-elf/xtensa-lx106-elf/include/sys/string.h \
  ../../include/../Helloworld/include/user_config.h \
- ../../include/os_type.h ../../include/ets_sys.h ../../include/ip_addr.h \
- ../../include/espconn.h ../../include/mem.h \
+ ../../include/os_type.h ../../include/ets_sys.h \
  ../../include/user_interface.h ../../include/ip_addr.h \
- ../../include/queue.h ../../include/spi_flash.h ../../include/gpio.h \
- ../../include/smartconfig.h ../../include/airkiss.h
+ ../../include/queue.h ../../include/spi_flash.h ../../include/gpio.h

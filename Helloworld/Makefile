@@ -74,10 +74,10 @@ LINKFLAGS_eagle.app.v6 = \
 	-lcrypto	\
 	-lmain	\
 	-ljson	\
+	-lupgrade\
 	-lssl	\
-	-lupgrade	\
+	-lpwm	\
 	-lsmartconfig \
-	-lairkiss\
 	$(DEP_LIBS_eagle.app.v6)					\
 	-Wl,--end-group
 

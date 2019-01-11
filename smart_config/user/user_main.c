@@ -251,7 +251,7 @@ void ICACHE_FLASH_ATTR
 user_init(void)
 {
     os_printf("SDK version:%s\n", system_get_sdk_version());
-	smartconfig_set_type(SC_TYPE_AIRKISS); //SC_TYPE_ESPTOUCH,SC_TYPE_AIRKISS,SC_TYPE_ESPTOUCH_AIRKISS
+	smartconfig_set_type(SC_TYPE_ESPTOUCH); //SC_TYPE_ESPTOUCH,SC_TYPE_AIRKISS,SC_TYPE_ESPTOUCH_AIRKISS
     wifi_set_opmode(STATION_MODE);
     smartconfig_start(smartconfig_done);
 }

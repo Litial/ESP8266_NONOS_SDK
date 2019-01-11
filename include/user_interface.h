@@ -33,7 +33,7 @@
 #endif
 
 #include "queue.h"
-#include "user_config.h"
+#include "../Helloworld/include/user_config.h"
 #include "spi_flash.h"
 #include "gpio.h"
 
