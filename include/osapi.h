@@ -26,9 +26,8 @@
 #define _OSAPI_H_
 
 #include <string.h>
-
-#include "../Helloworld/include/user_config.h"
 #include "os_type.h"
+#include "user_config.h"
 
 void ets_bzero(void *s, size_t n);
 void ets_delay_us(uint32_t us);

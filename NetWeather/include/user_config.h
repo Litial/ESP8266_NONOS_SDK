@@ -1,64 +1,21 @@
 #ifndef __USER_CONFIG_H__
 #define __USER_CONFIG_H__
 
-#define ESP_PLATFORM        1
-#define LEWEI_PLATFORM      0
+#include "osapi.h"
+#include "user_interface.h"
+#include "espconn.h"
+#include "mem.h"
 
-#define USE_OPTIMIZE_PRINTF
+#define URL_NET_WEATHER_HOST	"api.seniverse.com"
 
-#if ESP_PLATFORM
-#define PLUG_DEVICE             0
-#define LIGHT_DEVICE            1
-#define SENSOR_DEVICE			0
 
-#if SENSOR_DEVICE
-#define HUMITURE_SUB_DEVICE         1
-#define FLAMMABLE_GAS_SUB_DEVICE    0
-#endif
+#define PACKET_GET "GET /v3/weather/daily.json?key=rrpd2zmqkpwlsckt&location=yantai&language=en&unit=c&start=0&days=3 HTTP/1.1\r\nContent-Type: text/html;charset=utf-8\r\nAccept: */*\r\nHost: api.seniverse.com\r\nConnection: Keep-Alive\r\n\r\n"
 
-//#define SERVER_SSL_ENABLE
-//#define CLIENT_SSL_ENABLE
-//#define UPGRADE_SSL_ENABLE
+struct espconn user_tcp_conn;
 
-#define USE_DNS
+void getWeather(void);
 
-#ifdef USE_DNS
-#define ESP_DOMAIN      "iot.espressif.cn"
-#endif
-
-//#define SOFTAP_ENCRYPT
-
-#ifdef SOFTAP_ENCRYPT
-#define PASSWORD	"v*%W>L<@i&Nxe!"
-#endif
-
-#if SENSOR_DEVICE
-#define SENSOR_DEEP_SLEEP
-
-#if HUMITURE_SUB_DEVICE
-#define SENSOR_DEEP_SLEEP_TIME    30000000
-#elif FLAMMABLE_GAS_SUB_DEVICE
-#define SENSOR_DEEP_SLEEP_TIME    60000000
-#endif
-#endif
-
-#if LIGHT_DEVICE
-#define USE_US_TIMER
-#endif
-
-#if PLUG_DEVICE || LIGHT_DEVICE
-#define BEACON_TIMEOUT  150000000
-#define BEACON_TIME     50000
-#endif
-
-#define AP_CACHE           1
-
-#if AP_CACHE
-#define AP_CACHE_NUMBER    5
-#endif
-
-#elif LEWEI_PLATFORM
-#endif
+void ICACHE_FLASH_ATTR weather_station_init(struct ip_addr *remote_ip);
 
 #endif
 
