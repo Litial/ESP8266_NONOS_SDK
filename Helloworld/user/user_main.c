@@ -100,5 +100,10 @@ void ICACHE_FLASH_ATTR
 user_init(void)
 {
     os_printf("HelloWorld!@SDK version:%s\n", system_get_sdk_version());
+    test_cJSON();
 }
 
+bool ICACHE_FLASH_ATTR check_memleak_debug_enable(void)
+{
+    return MEMLEAK_DEBUG_ENABLE;
+}
